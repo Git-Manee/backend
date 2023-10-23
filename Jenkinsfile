@@ -8,7 +8,7 @@ pipeline {
         }
         stage('Code Quality'){
             steps{
-                sh 'npm install'
+                sh 'sonar-scanner -Dsonar.host.url=http://172.31.88.39:9000 -Dsonar.login=admin -Dsonar.password=admin123 -Dsonar.projectKey=backend'
             }
         }
         stage('Unit Test'){
